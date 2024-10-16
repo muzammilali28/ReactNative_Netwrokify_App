@@ -5,7 +5,7 @@ const fs = require('fs');
 const os = require('os');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 9000;
 
 app.use(bodyParser.json());
 
@@ -18,7 +18,7 @@ console.log("My Machine Address is : ",address)
 const API = "http://"+address+":"+PORT;
 console.log("The API is : ",API)
 
-fs.writeFile("../frontend/api-configurtaion.json",`{"API_URL" : "${API}"}`,(error)=>{
+fs.writeFile("../temp-frontend/api-configurtaion.json",`{"API_URL" : "${API}"}`,(error)=>{
 
   if(error){
     console.log("Error Found, Cannot Write to File")
